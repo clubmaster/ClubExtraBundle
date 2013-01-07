@@ -14,7 +14,7 @@ class PaginatorExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'club_paginator' => new \Twig_Function_Method($this, 'render')
+            'club_paginator' => new \Twig_Function_Method($this, 'render', array('is_safe' => array('html')))
         );
     }
 
