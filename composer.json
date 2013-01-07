@@ -1,0 +1,22 @@
+{
+    "name": "clubmaster/extra",
+    "type": "symfony-bundle",
+    "description": "ClubMaster extra bundle",
+    "keywords": ["clubmaster", "extra", "paginator", "breadcrumb"],
+    "license": "Beerware",
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "authors": [
+        {
+            "name": "Michael Holm Kristensen",
+            "email": "hollo@hollo.dk",
+            "homepage": "http://www.hollo.dk",
+            "role": "Maintainer"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Club\\ExtraBundle": "" }
+    },
+    "target-dir": "Club/ExtraBundle"
+}
