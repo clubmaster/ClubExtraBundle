@@ -2,5 +2,5 @@ services:
     club_extra.paginator:
         class: Club\ExtraBundle\Helper\Paginator
         arguments: [50, 7]
-    club_breadcrumb.breadcrumb:
+    club_extra.breadcrumb:
         class: Club\ExtraBundle\Helper\Breadcrumb

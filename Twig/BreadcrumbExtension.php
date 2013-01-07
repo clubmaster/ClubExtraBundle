@@ -20,7 +20,7 @@ class BreadcrumbExtension extends \Twig_Extension
 
     public function render()
     {
-        $items = $this->container->get('club_breadcrumb.breadcrumb')->getItems();
+        $items = $this->container->get('club_extra.breadcrumb')->getItems();
 
         return $this->container->get('templating')->render('ClubExtraBundle:Breadcrumb:breadcrumb.html.twig', array(
             'items' => $items
