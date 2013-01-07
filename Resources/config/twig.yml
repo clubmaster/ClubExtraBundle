@@ -1,0 +1,6 @@
+services:
+    club_breadcrumb.twig_breadcrumb:
+        class: Club\ExtraBundle\Twig\BreadcrumbExtension
+        arguments: [@service_container]
+        tags:
+            - { name: twig.extension }
