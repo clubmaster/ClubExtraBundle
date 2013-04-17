@@ -33,30 +33,39 @@ class SocialBar extends \Twig_Extension{
 
     public function getSocialButtons($parameters = array())
     {
-        // no parameters were defined, keeps default values
-        if (!array_key_exists('facebook', $parameters)){
-            $render_parameters['facebook'] = array();
-            // parameters are defined, overrides default values
-        }else if(is_array($parameters['facebook'])){
+        if (!array_key_exists('facebook', $parameters)) {
+            if ($this->container->getParameter('club_extra.facebook')) {
+                $render_parameters['facebook'] = array();
+            } else {
+                $render_parameters['facebook'] = false;
+            }
+        } elseif (is_array($parameters['facebook'])) {
             $render_parameters['facebook'] = $parameters['facebook'];
-            // the button is not displayed
-        }else{
+        } else {
             $render_parameters['facebook'] = false;
         }
 
-        if (!array_key_exists('twitter', $parameters)){
-            $render_parameters['twitter'] = array();
-        }else if(is_array($parameters['twitter'])){
+        if (!array_key_exists('twitter', $parameters)) {
+            if ($this->container->getParameter('club_extra.twitter')) {
+                $render_parameters['twitter'] = array();
+            } else {
+                $render_parameters['twitter'] = false;
+            }
+        } elseif (is_array($parameters['twitter'])) {
             $render_parameters['twitter'] = $parameters['twitter'];
-        }else{
+        } else {
             $render_parameters['twitter'] = false;
         }
 
-        if (!array_key_exists('googleplus', $parameters)){
-            $render_parameters['googleplus'] = array();
-        }else if(is_array($parameters['googleplus'])){
+        if (!array_key_exists('googleplus', $parameters)) {
+            if ($this->container->getParameter('club_extra.googleplus')) {
+                $render_parameters['googleplus'] = array();
+            } else {
+                $render_parameters['googleplus'] = false;
+            }
+        } elseif (is_array($parameters['googleplus'])) {
             $render_parameters['googleplus'] = $parameters['googleplus'];
-        }else{
+        } else {
             $render_parameters['googleplus'] = false;
         }
 

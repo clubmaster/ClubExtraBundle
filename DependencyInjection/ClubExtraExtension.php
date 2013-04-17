@@ -25,5 +25,9 @@ class ClubExtraExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('twig.yml');
+
+        $container->setParameter('club_extra.facebook', $config['facebook']);
+        $container->setParameter('club_extra.twitter', $config['twitter']);
+        $container->setParameter('club_extra.googleplus', $config['googleplus']);
     }
 }

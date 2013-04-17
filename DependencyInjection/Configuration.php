@@ -24,6 +24,13 @@ class Configuration implements ConfigurationInterface
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
 
+        $rootNode
+            ->children()
+                ->scalarNode('facebook')->defaultValue(true)->end()
+                ->scalarNode('twitter')->defaultValue(true)->end()
+                ->scalarNode('googleplus')->defaultValue(true)->end()
+            ->end();
+
         return $treeBuilder;
     }
 }
