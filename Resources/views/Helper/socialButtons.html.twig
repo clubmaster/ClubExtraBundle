@@ -1,0 +1,25 @@
+<div id="socialBar" class="row-fluid">
+  {% if facebook is not sameas(false) %}
+    <div class="span4">
+    <div class="button facebookButton">
+      {{ facebookButton(facebook) }}
+    </div>
+    </div>
+  {% endif %}
+
+  {% if googleplus is not sameas(false) %}
+    <div class="span4">
+    <div class="button googleplus">
+      {{ googlePlusButton(googleplus) }}
+    </div>
+    </div>
+  {% endif %}
+
+  {% if twitter is not sameas(false) %}
+    <div class="span4">
+    <div class="button twitterButton">
+      {{ twitterButton(twitter) }}
+    </div>
+    </div>
+  {% endif %}
+</div>
