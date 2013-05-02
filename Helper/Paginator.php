@@ -26,6 +26,11 @@ class Paginator {
     protected $numPages;
 
     /**
+     * @array extra data
+     */
+    protected $extra;
+
+    /**
      * @var int items limit (items per page)
      */
     protected $itemsCount;
@@ -50,10 +55,11 @@ class Paginator {
      */
     protected $range;
 
-    function __construct($limit, $midRange)
+    function __construct($limit, $midRange, $router)
     {
         $this->limit = $limit;
         $this->midRange = $midRange;
+        $this->router = $router;
     }
 
     public function setLimit($limit)
@@ -77,12 +83,13 @@ class Paginator {
         return $this;
     }
 
-    public function init($results=null, $itemsCount = null, $page = null, $url = null)
+    public function init($results=null, $itemsCount = null, $page = null, $url = null, $extra = array())
     {
         if ($results) $this->setLimit($results);
         if ($itemsCount) $this->setItemsCount($itemsCount);
         if ($page) $this->setCurrentPage($page);
         if ($url) $this->setUrl($url);
+        if ($extra) $this->extra = $extra;
 
         //Set defaults
         $this->setDefaults();
@@ -196,6 +203,21 @@ class Paginator {
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * @return string url
+     */
+    public function getAbsoluteUrl($number)
+    {
+        $param = array();
+        if (count($this->extra)) {
+            $param = $this->extra;
+        }
+
+        $param['page'] = $number;
+
+        return $this->router->generate($this->getUrl(), $param);
     }
 
     /**

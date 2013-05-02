@@ -1,6 +1,6 @@
 services:
     club_extra.paginator:
         class: Club\ExtraBundle\Helper\Paginator
-        arguments: [50, 7]
+        arguments: [50, 7, @router]
     club_extra.breadcrumb:
         class: Club\ExtraBundle\Helper\Breadcrumb
