@@ -11,11 +11,16 @@ services:
             - { name: twig.extension }
     club.socialBarHelper:
         class : Club\ExtraBundle\Helper\SocialBarHelper
-        tags : 
-            - {name : 'templating.helper', alias : 'social-buttons'} 
         arguments : [@templating]
+        tags :
+            - { name: 'templating.helper', alias: 'social-buttons' }
     twig.extension.club_social_bar:
         class: Club\ExtraBundle\Twig\SocialBar
+        arguments : [@service_container]
         tags:
             - { name: 'twig.extension' }
+    twig.extension.club_google_map:
+        class: Club\ExtraBundle\Twig\GoogleMapExtension
         arguments : [@service_container]
+        tags:
+            - { name: 'twig.extension' }

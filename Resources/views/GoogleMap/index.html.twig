@@ -1,0 +1,17 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpGgm6_UKO2bdJL9T327Txt2FHx0GX6Fc&sensor=false"></script>
+<script type="text/javascript" src="{{ asset('bundles/clubextra/js/google_maps.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        if ({{ longitude }} == '') {
+            $('div#map_canvas').parent().addClass('hidden');
+        } else {
+            var name = "{{ name }}";
+            var lng = "{{ longitude }}";
+            var lat = "{{ latitude }}";
+
+            initialize(lat, lng, name);
+        }
+    });
+</script>
+
+<div id="map_canvas" style="height: 400px;"></div>
