@@ -29,6 +29,7 @@ class GoogleGeocode
             $this->key
         );
 
+        $this->decodedResult = null;
         $this->result = file_get_contents($url);
 
         return $this;
@@ -44,6 +45,7 @@ class GoogleGeocode
             $this->key
         );
 
+        $this->decodedResult = null;
         $this->result = file_get_contents($url);
 
         return $this;

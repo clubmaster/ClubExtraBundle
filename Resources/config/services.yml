@@ -7,3 +7,5 @@ services:
     club_extra.google_geocode:
         class: Club\ExtraBundle\Helper\GoogleGeocode
         arguments: [@service_container]
+    club_extra.distance:
+        class: Club\ExtraBundle\Helper\Distance
