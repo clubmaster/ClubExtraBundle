@@ -1,4 +1,4 @@
-1.4
+1.4 (2014-04-06)
     * Added support for google geocode API
     * Added latitude and longitude distance calculation
 
