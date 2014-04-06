@@ -29,7 +29,9 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('facebook')->defaultValue(true)->end()
                 ->scalarNode('twitter')->defaultValue(true)->end()
                 ->scalarNode('googleplus')->defaultValue(true)->end()
-                ->scalarNode('google_maps_key')->defaultValue(false)
+                ->scalarNode('google_maps_key')->defaultValue(false)->end()
+                ->scalarNode('google_geocode_output_format')->defaultValue('json')->end()
+                ->scalarNode('google_geocode_key')->defaultValue('12345678')->end()
             ->end();
 
         return $treeBuilder;

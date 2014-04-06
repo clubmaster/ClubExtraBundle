@@ -4,3 +4,6 @@ services:
         arguments: [50, 7, @router]
     club_extra.breadcrumb:
         class: Club\ExtraBundle\Helper\Breadcrumb
+    club_extra.google_geocode:
+        class: Club\ExtraBundle\Helper\GoogleGeocode
+        arguments: [@service_container]

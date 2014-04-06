@@ -30,5 +30,7 @@ class ClubExtraExtension extends Extension
         $container->setParameter('club_extra.twitter', $config['twitter']);
         $container->setParameter('club_extra.googleplus', $config['googleplus']);
         $container->setParameter('club_extra.google_maps_key', $config['google_maps_key']);
+        $container->setParameter('club_extra.google_geocode_output_format', $config['google_geocode_output_format']);
+        $container->setParameter('club_extra.google_geocode_key', $config['google_geocode_key']);
     }
 }
